@@ -6,6 +6,7 @@ def number(n):
 
 
 
+
 number(124)
 number(0)
 number(123)
