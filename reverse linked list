@@ -1,0 +1,53 @@
+#!/usr/bin/python
+class node :
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class linkedlist :
+    def __init__(self):
+        self.head = None
+
+    def reverse(self):
+        prev = None
+        current = self.head
+        while (current != None):
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+            self.head = prev
+
+    def push(self, data):
+        if self.head == None:
+            self.head = node(data)
+        else :
+            new_node = node(data)
+            new_node.next = self.head
+            self.head = new_node
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print temp.data
+            temp = temp.next
+
+
+
+
+l = linkedlist()
+l.push(10)
+l.display()
+l.push(20)
+l.display()
+l.push(30)
+l.display()
+l.push(40)
+l.display()
+
+
+
+
+
+
+

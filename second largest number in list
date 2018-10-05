@@ -1,0 +1,26 @@
+#!/usr/bin/python
+from sys import maxint
+def second(list):
+    secondlargestnum = -maxint
+    largestnum =  -maxint + 1
+    for i in list :
+        if (secondlargestnum < largestnum  and largestnum <= i) :
+            secondlargestnum = largestnum
+            largestnum = i
+        elif (largestnum > i) :
+            if (secondlargestnum > i) :
+                break
+            else :
+                secondlargestnum = i
+    return secondlargestnum
+
+
+print"second biggest num is: ",second([45,6,9,8])
+print"second biggest num is: ",second([45,-6,-8,-9])
+print"second biggest num is: ",second([45,6,-8,0])
+print"second biggest num is: ",second([45,-1,1,0])
+
+print"second biggest num is: ",second([0,0,0,0])
+print"second biggest num is: ",second([-6,-6,-6,-6])
+print"second biggest num is: ",second([1,10,3,2])
+print"second biggest num is: ",second([2,2,2,2])

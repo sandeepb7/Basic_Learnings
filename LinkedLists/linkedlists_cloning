@@ -1,0 +1,42 @@
+#!/usr/bin/python
+class linkedlistNode:
+    def __init__(self,NodeID)
+        self.label = NodeID
+        self.next = None
+        self.random = None
+
+
+class solution:
+    def copyRandomList(self, head):
+        if head == None:
+            return None
+        temp = head
+        while temp != None:
+            newNode = LinkedlistNode(temp.label)
+            newNode.next = temp.next
+            temp.next = newNode
+            temp = temp.next.next
+        temp = head
+        while temp != None:
+            if temp.random:
+                temp.next.random = temp.random.next
+            temp = temp.next.next
+        newhead =  head.next
+        Pold = head
+        Pnew = head.next
+        while Pnew.next:
+           Pold.next = Pnew.next
+           Pold = Pold.next
+           Pnew.next = Pold.next
+           Pnew = Pnew.next
+        Pold.next = None
+        Pnew.next = None
+        return newhead
+
+
+
+
+
+
+
+

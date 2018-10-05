@@ -1,0 +1,21 @@
+#!/usr/bin/python
+def sum(n):
+    if (n < 0) :
+        print "negative number not valid"
+    if (n == 0) :
+        print"sum is 0"
+    a = 0
+    while (n > 0) :
+        a = a + (n % 10)
+        n = n / 10
+    return a
+
+
+
+print "sum of 3456: ",sum(3456)
+print "sum of 4567: ",sum(4567)
+print "sum of 34567: ",sum(34567)
+print "sum of 1992: ",sum(1992)
+print "sum of -1992: ",sum(-1992)
+print "sum of 0: ",sum(0)
+

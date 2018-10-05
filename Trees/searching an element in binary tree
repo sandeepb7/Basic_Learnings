@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+class Node:
+    def __init__(self, key):
+        self.data = key
+        self.right = None
+        self.left = None
+
+
+def printLevelOrder(root):
+    h = height(root)
+    for i in range(1, h+1):
+        printGivenLevel(root, i)
+

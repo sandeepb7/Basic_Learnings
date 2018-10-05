@@ -1,0 +1,21 @@
+import time
+import threading
+
+p = 0
+lock = threading.Lock()
+
+def myfunc():
+    lock.acquire()
+    global p
+    p += 1
+    print 'sleeping 5 sec from thread: ', p
+    time.sleep(5)
+    print 'finished sleeping from thread: ', p
+    lock.release()
+    return
+
+threads = []
+for i in range(10):
+    t = threading.Thread(target=myfunc)
+    threads.append(t)
+    t.start()

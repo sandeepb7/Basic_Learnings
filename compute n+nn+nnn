@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+n = int(raw_input("Value of n: "))
+
+n = n + 11*n + 111*n
+
+print "Ans= ", n
+
+
+
+
+
+
+

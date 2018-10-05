@@ -1,0 +1,20 @@
+#!/usr/bin/python
+def fibo(n):
+    if n < 1 : return -1
+    if n == 1 : return 0
+    if n == 2 : return 1
+    x = 0
+    y = 1
+    while n > 2:
+        z = x + y
+        x = y
+        y = z
+        n = n - 1
+    return z
+
+print "fibo of -5 is ", fibo(-5)
+print "fibo of 5 is ", fibo(5)
+print "fibo of 6 is ", fibo(6)
+print "fibo of 8 is ", fibo(8)
+print "fibo of 10 is ", fibo(10)
+

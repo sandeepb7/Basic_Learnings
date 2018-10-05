@@ -1,0 +1,41 @@
+
+#!/usr/bin/python
+
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+    def insert(self, data):
+        if data < self.data:
+            if self.left is None:
+                self.left = Node(data)
+            else:
+                self.left.insert(data)
+        else:
+            if self.right is None:
+                self.right = Node(data)
+            else:
+                self.right.insert(data)
+
+
+    def LeafCount(node):
+        if node is None:
+            return 0
+        if (node.left is None and node.right is None):
+            return 1
+        else:
+            return node.left.LeafCount + node.right.LeafCount
+
+
+
+root = Node(8)
+root.insert(3)
+root.insert(10)
+root.insert(1)
+root.insert(6)
+root.insert(4)
+root.insert(7)
+root.insert(14)
+root.insert(13)

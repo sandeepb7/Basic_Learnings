@@ -1,0 +1,73 @@
+#!/usr/bin/python
+
+class Node:
+    def __init__(self,data):
+       self.data = data
+       self.left = None
+       self.right = None
+
+
+
+    def minValueNode(self, node):
+        current = node
+
+        while(current.left is not None):
+            current = current.left
+        return current
+
+    def insert(self, data):
+        if data < self.data:
+            if self.left is None:
+                self.left = Node(data)
+            else:
+                self.left.insert(data)
+        else:
+            if self.right is None:
+                self.right = Node(data)
+            else:
+                self.right.insert(data)
+
+    def delete(self, data):
+        if self is None:
+            return None
+
+        if data < self.data:
+            self.left = self.left.delete(data)
+
+        elif data > self.data:
+            self.right = self.right.delete(data)
+
+        else:
+            if self.left is None:
+                temp = self.right
+                return temp
+            elif self.right is None:
+                temp = self.left
+                return temp
+            temp = self.minValueNode(self.right)
+            self.data = temp.data
+            self.right = self.right.delete(temp.data)
+
+        return self
+
+
+    def inorder_print(self):
+        if self.left:
+            self.left.inorder_print()
+        print self.data
+        if self.right:
+            self.right.inorder_print()
+
+
+root = Node(8)
+root.insert(3)
+root.insert(10)
+root.insert(1)
+root.insert(6)
+root.insert(4)
+root.insert(7)
+root.insert(14)
+root.insert(13)
+root.inorder_print()
+root.delete(14)
+root.inorder_print()

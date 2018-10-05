@@ -1,0 +1,8 @@
+#!/usr/bin/python
+def matched:
+    opening = tuple('({[')
+    closing = tuple(')}]')
+    mapping = dict(zip(opening, closing))
+    queue = []
+
+

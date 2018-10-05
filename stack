@@ -1,0 +1,31 @@
+#!/usr/bin/python
+class stack:
+    def __init__(self):
+        self.data = []
+
+    def isEmpty(self):
+        return self.data == []
+
+    def push(self, a):
+        self.data.append(a)
+
+    def pop(self):
+        return self.data.pop()
+
+    def display(self):
+        out = ""
+        for x in self.data:
+            out += str(x)
+            out += " "
+        print "\nDisplay: ", out
+
+
+s = stack()
+s.push(10)
+s.display()
+s.push(20)
+s.display()
+print "\npopping", s.pop()
+s.display()
+s.push(30)
+s.display()

@@ -1,0 +1,21 @@
+#!/usr/bin/python
+def perfect (n) :
+    if (n <= 0) :
+        print "Not valid"
+    if (n > 0) :
+        temp = 0
+        for i in range (1,n) :
+            if (n % i == 0) :
+                temp = temp + i
+        if (temp == n) :
+            print"It's perfect number"
+        else :
+            print "It's not perfect number"
+
+
+
+print"Is 0 perfect number: ",perfect(0)
+print"Is -6 perfect number: ",perfect(-6)
+print"Is 6 perfect number: ",perfect(6)
+print"Is 10 perfect number: ",perfect(10)
+print"Is 28 perfect number: ",perfect(28)

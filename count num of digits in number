@@ -1,0 +1,16 @@
+#!/usr/bin/python
+def numdigits(n) :
+    if (n <= 0) :
+        print "Not Valid"
+    count = 0
+    while (n > 0) :
+        count = count + 1
+        n = n / 10
+    print "number of digits are: ", count
+
+
+
+numdigits(143)
+numdigits(0)
+numdigits(19999999)
+numdigits(-1111)

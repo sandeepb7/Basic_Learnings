@@ -1,0 +1,14 @@
+#!/usr/bin/python
+
+a = int(raw_input("Sub A: "))
+b = int(raw_input("Sub B: "))
+c = int(raw_input("Sub C: "))
+d = int(raw_input("Sub D: "))
+e = int(raw_input("Sub E: "))
+
+total = (a + b + c + d + e)/5
+
+if total >= 40 :
+    print "pass"
+else :
+    print "Fail"

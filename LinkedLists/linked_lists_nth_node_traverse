@@ -1,0 +1,55 @@
+#!/usr/bin/python
+class node :
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class find :
+    def __init__(self):
+        self.head = None
+
+
+    def push(self, new_data):
+        new_node = node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+
+
+    def Nth_node(self, n):
+        temp = self.head
+        M = 0
+        while temp != None:
+            temp = temp.next
+            M += 1
+            return M
+        current = self.head
+        while current != None:
+            for i in range (0, M):
+                if (i == (M - n + 1)):
+                    return current.data
+                current = current.next
+
+
+f = find()
+f.push(2)
+f.push(33)
+f.push(55)
+f.push(7)
+f.push(82)
+f.push(90)
+print"element in 4th node is: ", f.Nth_node(4)
+print"element in 2th node is: ", f.Nth_node(2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+#!/usr/bin/python
+def fibonacci(n):
+    if (n<= 0):
+        print "Not valid"
+    elif (n == 0):
+        return 0
+    elif (n == 1):
+        return 1
+    else:
+        return (fibo(n-1) + fibo(n-2))
+def fibo(n):
+    for i in range (n):
+        print fibonacci(i)
+
+
+
+print"Fibonacci sequence is: ", fibo(5)

@@ -1,0 +1,11 @@
+#!/usr/bin/python
+def series(x,n):
+    sum = 1
+    for i in range(2, n + 1):
+        sum = sum + float((x**i)*(i**-1))
+
+    print sum
+
+
+series(2,2)
+series(1,3)

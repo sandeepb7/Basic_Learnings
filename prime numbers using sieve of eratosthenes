@@ -1,0 +1,33 @@
+#!/usr/bin/python
+class number:
+    def __init__(self, i):
+        self.prime = True
+        self.value = i
+
+    def strike(self):
+        self.prime = False
+
+def prime_eratos (n) :
+    primeArray = [None] * n
+
+    for i in range (2,n):
+        primeArray[i] = number(i)
+
+    i = 2
+    while (i < n):
+        primenum = primeArray[i].value
+        print primenum, " is a prime number"
+        i += 1
+        counter = i
+        while (counter < n):
+            if (primeArray[counter].value % primenum == 0):
+                primeArray[counter].strike()
+            counter += 1
+        while (i < n and primeArray[i].prime == False):
+            i += 1
+
+
+prime_eratos(200)
+
+
+

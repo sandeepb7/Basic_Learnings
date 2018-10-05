@@ -1,0 +1,25 @@
+#!/usr/bin/python
+def factorial(n):
+    if (n < 0):
+        return -1
+
+    product = 1
+    while n > 0:
+        product = product * n
+        n = n - 1
+
+    return product
+
+print "factorial of 5 is ", factorial(5)
+print "factorial of 6 is ", factorial(6)
+
+if ( factorial(-1) != -1 ) : print "error occurred for 2"
+
+if ( factorial(-100) != -1 ) : print "error occurred for 2"
+
+if ( factorial(2) != 2 ) : print "error occurred for 2"
+
+if ( factorial(4) != 24 ) : print "error occurred for 4"
+
+if ( factorial(5) != 120 ) : print "error occurred for 5"
+

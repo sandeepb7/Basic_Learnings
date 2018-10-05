@@ -1,0 +1,37 @@
+#!/usr/bin/python
+class queue:
+    def __init__(self):
+        self.data = []
+
+    def isEmpty(self):
+        return self.data == []
+
+    def deque(self):
+        if self.isEmpty() :
+            print "data is empty"
+        else :
+            return self.data.pop(0)
+
+    def enque(self, n) :
+        self.data.append(n)
+
+    def display(self) :
+        out = ""
+        for x in self.data :
+            out += str(x)
+            out += " "
+        print "\ndisplay: ", out
+
+
+
+q = queue()
+q.enque(20)
+q.display()
+q.enque(40)
+q.display()
+q.deque()
+q.display()
+q.deque()
+q.display()
+q.deque()
+q.display()

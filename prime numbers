@@ -1,0 +1,22 @@
+#!/usr/bin/python
+def isPrime(n):
+    if n < 1 : print " Not valid"
+    if n == 1 : print "1 is neither prime nor composite "
+    if n == 2 : print "2 is prime number"
+    if n == 3 : print "3 is prime number"
+    i = 2
+    while (i < n / 2) :
+        if n % i == 0 :
+            print " not prime number"
+            return
+        else:
+            i = i + 1
+    print " a prime number"
+
+
+print "10 is ", isPrime(10)
+print "7 is ", isPrime(7)
+print "33 is ", isPrime(33)
+print "47 is ", isPrime(47)
+print "67 is ", isPrime(67)
+print "83 is ", isPrime(83)

@@ -1,0 +1,48 @@
+class stack:
+    def __init__(self, n):
+        self.data = [None] * n
+        self.top = 0
+        self.capacity = n
+        self.size = 0
+
+    def push(self, value) :
+        if (self.top == self.capacity - 1) :
+            print "Stack is full"
+        self.data[self.top] = value
+        self.top = self.top + 1
+
+    def empty(self) :
+        if (self.top == 0) :
+            print "stack is empty"
+
+    def pop(self) :
+        returnElement = self.data[self.top]
+        self.top = self.top - 1
+        return returnElement
+
+
+
+    def display(self):
+        out = ""
+        for x in self.data :
+            out += str(x)
+            out += " "
+        if self.empty() : print "display: empty"
+        else: print "display: ", out
+
+
+s = stack(5)
+s.push(45)
+s.display()
+s.push(35)
+s.display()
+s.pop()
+s.display()
+s.push(25)
+s.display()
+s.pop()
+s.display()
+s.pop()
+s.display()
+s.pop()
+s.display()

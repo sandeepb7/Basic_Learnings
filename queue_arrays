@@ -1,0 +1,52 @@
+#!/usr/bin/python
+class queue:
+    def __init__(self, n):
+        self.data = [None] * n
+        self.front = -1
+        self.rear = -1
+        self.capacity = n
+        self.size = 0
+
+    def enque(self, value) :
+        nextElement = (self.front + 1) % self.capacity
+        if (nextElement == self.rear) :
+            print "queue is full"
+        self.data[nextElement] = value
+        self.front = nextElement
+        if (self.rear == -1) : self.rear = 0
+
+    def deque(self) :
+        if ((self.front==self.rear) and (self.front == -1)) :
+            print "Empty queue "
+        returnElement = self.data[self.rear]
+        self.rear = (self.rear + 1) % self.capacity
+        return returnElement
+
+    def display(self) :
+        out = ""
+        it = self.rear
+        while (it != self.front + 1):
+            out += str(self.data[it])
+            out += " "
+            it = (it + 1) % self.capacity
+        print "\ndisplay: ", out
+
+
+q = queue(5)
+q.enque(2)
+q.display()
+q.enque(4)
+q.display()
+q.deque()
+q.display()
+q.enque(6)
+q.display()
+
+
+
+
+
+
+
+
+

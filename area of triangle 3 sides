@@ -1,0 +1,15 @@
+#!/usr/bin/python
+def area_triangle(x,y,z) :
+    if (x <= 0 or y <= 0 or z <= 0) :
+        print "Not valid"
+        return
+
+    p = (x + y + z) / 2
+    area = (p * (p - x) * (p - y) * (p-z))**(1./2)
+    print area
+
+
+print "area of triangle 3,4,5 is: ", area_triangle(3,4,5)
+print "area of triangle 5,6,7 is: ", area_triangle(5,6,7)
+print "area of triangle 0,5,6 is: ", area_triangle(0,5,6)
+print "area of triangle 0,5,-6 is: ", area_triangle(0,5,-6)

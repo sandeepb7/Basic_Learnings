@@ -1,0 +1,18 @@
+#!/usr/bin/python
+def factor(n) :
+    x =1
+    while (x<=n) :
+        y = 0
+        if(n%x == 0) :
+            z = 1
+            while (z<=x) :
+                if (x%z == 0) :
+                    y = y + 1
+                z = z + 1
+            if (y == 2) :
+               print x
+        x = x + 1
+
+
+
+print "prime factors of 22: ", factor(22)

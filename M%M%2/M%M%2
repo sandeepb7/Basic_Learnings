@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+
+from multiprocessing import Queue
+import time
+import threading
+
+lock = threading.Lock()
+
+
+
+q = Queue()
+
+num_worker_threads = 2
+
+def worker():
+    while True:
+        print ("waiting for message " .format(tread = threading.get_ident()))
+        item = q.get()
+        print ("Message received". format(msg = item, thread = threading.get_ident()))
+        if item is None:
+            q.tast_done()
+            break
+        do_work(item)
+        q.task_done()
+
+
+def do_work(item):
+    print ("Message Processing" .format(msg = item, thread = threading.get_ident()))
+    time.sleep(2)
+    print ("Message Processed". format(msg = item, thread = threading.get_ident()))
+
+
+threads = []
+for i in range(num_worker_threads):
+    t = threading.Thread(target = worker)
+    threads.append(t)
+    t.start()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

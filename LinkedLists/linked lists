@@ -1,0 +1,100 @@
+#!/usr/bin/python
+class node(object) :
+    def __init__(self, data = None, next = None ):
+        self.data = data
+        self.Next = next
+
+    def get_data(self) :
+        return self.data
+
+    def get_next(self) :
+        return self.Next
+
+    def set_next(self, new_next) :
+        self.Next = new_next
+
+class linkedlist(object) :
+    def __init__(self, head = None) :
+        self.head = head
+
+    def insert_head(self, data) :
+        new_node = node(data)
+        new_node.set_next(self.head)
+        self.head = new_node
+
+    def insert_n(self, data, index) :
+        current = self.head
+        previous = None
+        counter = 0
+        new_node = node(data)
+        if index == 0 :
+            new_node.set_next(self.head)
+            self.head = new_node
+        else :
+            while counter < index :
+                previous = current
+                current = current.get_next()
+                counter = counter + 1
+
+            new_node.set_next(previous.get_next())
+            previous.set_next(new_node)
+
+    def insert_tail(self, data) :
+
+        if (self.head == None) :
+            self.head = node(data)
+
+        else :
+            current = self.head
+            while (current.Next != None) :
+                current = current.Next
+            current.Next = node(data)
+
+    def display(self):
+        temp = self.head
+        while temp != None :
+            print temp.get_data(), " "
+            temp = temp.get_next()
+        print ""
+
+
+    def delete(self, data) :
+        current = self.head
+        previous = None
+        found = False
+        while current and found is False :
+            if current.get_data() == data :
+                found = True
+            else :
+              previous = current
+              current = current.get_next()
+        if current == None :
+            print "Data not in List"
+
+        if previous == None :
+            self.head = current.get_next()
+        else :
+            previous.set_next(current.get_next())
+
+
+l = linkedlist()
+l.insert_head(10)
+l.display()
+l.insert_head(20)
+l.display()
+l.insert_head(30)
+l.display()
+l.insert_head(40)
+l.display()
+
+
+
+
+
+
+
+
+
+
+
+

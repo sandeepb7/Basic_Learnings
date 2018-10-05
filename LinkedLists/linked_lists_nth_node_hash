@@ -1,0 +1,19 @@
+#!/usr/bin/python
+class node :
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+        linked_index_to_node = {}
+
+        next_node = node(data)
+        next_index = 1
+        while next_node != None :
+            linked_index_to_node[next_index] = next_node
+            next_index += 1
+            next_node = next_node.next
+
+
+
+
+

@@ -1,0 +1,15 @@
+#!/usr/bin/python
+def sine(x,n) :
+    pie = float(22 / 7)
+    y = float((x * pie) / 180)
+    sinx = 0
+    for i in range (0,n + 1) :
+        f = 1
+        for j in range (1,2*i + 2) :
+            f = f * j
+        sinx = sinx + float((((-1)**i) * (y**(2.*i + 1))) / f)
+    print sinx
+    return
+
+sine(30,5)
+sine(90,1)

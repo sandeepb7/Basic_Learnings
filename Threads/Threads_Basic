@@ -1,0 +1,18 @@
+import threading
+
+p = 0
+lock = threading.Lock()
+
+def worker():
+    lock.acquire()
+    global p
+    p += 1
+    print 'Worker', p
+    lock.release()
+    return
+
+threads = []
+for i in range(5):
+    t = threading.Thread(target=worker)
+    threads.append(t)
+    t.start()

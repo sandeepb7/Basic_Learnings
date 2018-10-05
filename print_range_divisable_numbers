@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+a = int(raw_input("Start Number: "))
+b = int(raw_input("End Number: "))
+n = int(raw_input("Dividing number: "))
+
+for x in range(a,b+1) :
+    if x%n == 0 :
+        print "Numbers divisable are: ",x
+
+

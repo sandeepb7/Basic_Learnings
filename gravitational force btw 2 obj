@@ -1,0 +1,9 @@
+#!/usr/bin/python
+def gravity(n,m,d) :
+    g = 6.673 * (10 ** -11)
+    f = (g * n * m) / (d**2)
+    print f
+
+
+print "gravitational force of two obj is: ", gravity(60,45,1.2)
+

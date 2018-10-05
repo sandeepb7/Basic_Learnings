@@ -1,0 +1,10 @@
+#!/usr/bin/python
+def avg(list):
+    sum = 0
+    for i in list:
+        sum = sum + i
+    avg = sum / len(list)
+    print "avg of list is", avg
+
+avg([2,4,6,8])
+avg([10,10,10,10,10,10,10])

@@ -1,0 +1,14 @@
+#!/usr/bin/python
+def check(n):
+    if n == 0 :
+        print "neither Positive nor Negative"
+    if n < 0 :
+        print "Negative"
+    if n > 0 :
+        print "Positive"
+
+
+
+print "10 is ", check(10)
+print "-5 is ", check(-5)
+print "0 is ", check(0)

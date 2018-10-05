@@ -1,0 +1,29 @@
+#!/usr/bin/python
+class insert:
+    def __init__(self):
+        self.data = []
+
+    def isEmpty(self):
+        return self.data == []
+
+    def push(self, a):
+        self.data.append(a)
+
+    def pop(self):
+        return self.data.pop()
+
+    def deque(self):
+        if self.isEmpty() :
+            print "data is empty"
+        else :
+            return self.data.pop(0)
+
+    def newelement(self, k) :
+        self.data.insert(0,k)
+
+    def insert_position (self,p) :
+        self.data.insert(i, p)
+
+    def remove_position(self) :
+        self.data.remove(i)
+

@@ -1,0 +1,22 @@
+#!/usr/bin/python
+
+def reverse(n) :
+    if (n < 0) : print "Not Valid"
+    if (n == 0) : print "0"
+    a = 0
+    prod = 0
+    while (n > 0) :
+        a = n % 10
+        prod = (prod * 10) + a
+        n = n / 10
+    return prod
+
+
+
+print "Reverse of 5069 is: ",reverse(5069)
+print "Reverse of 1 is: ",reverse(1)
+print "Reverse of 0 is: ",reverse(0)
+print "Reverse of -34 is: ",reverse(-34)
+print "Reverse of 444 is: ",reverse(444)
+
+

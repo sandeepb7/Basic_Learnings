@@ -1,0 +1,15 @@
+#!/usr/bin/python
+l = []
+def convert(n):
+    if n == 0:
+        return 1
+    x = n%2
+    l.append(x)
+    convert(n//2)
+    l.reverse()
+    print("Binary equivalent:")
+    for i in l:
+        print i
+
+
+convert(20)

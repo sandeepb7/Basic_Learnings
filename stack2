@@ -1,0 +1,39 @@
+#!/usr/bin/python
+
+class stack2:
+
+    def __init__(self) :
+        self.data = []
+    def isempty(self):
+        return self.data == []
+    def push(self, n) :
+        self.data.append(n)
+    def pop(self) :
+        if self.isempty():
+            print "array empty"
+        else:
+            return self.data.pop()
+    def display(self):
+        out = ""
+        for x in self.data :
+            out += str(x)
+            out += " "
+        if self.isempty() : print "display: empty"
+        else: print "display: ", out
+
+
+s = stack2()
+s.push(45)
+s.display()
+s.push(35)
+s.display()
+s.pop()
+s.display()
+s.push(25)
+s.display()
+s.pop()
+s.display()
+s.pop()
+s.display()
+s.pop()
+

@@ -1,0 +1,91 @@
+#!/usr/bin/python
+class Node :
+    def __init__(self, data = None):
+        self.data = data
+        self.next = None
+
+class linkedlist() :
+    def __init__(self):
+        self.head = None
+
+
+    def get_prev_node(self, ref_node):
+        current = self.head
+        while(current and current.next != ref_node):
+            current = current.next
+        return current
+
+    def insert_end(self, new_node):
+        if self.head == None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next != None:
+                current = current.next
+            current.next = new_node
+
+
+    def remove(self,node):
+        prev_node = self.get_prev_node(node)
+        if (prev_node == None):
+            self.head = self.head.next
+        else:
+            prev_node.next = node.next
+
+    def display(self):
+            temp = self.head
+            while temp:
+                print temp.data
+                temp = temp.next
+
+
+    def remove_duplicates(llist):
+        current1 = llist.head
+        while current1:
+            current2 = current1.next
+            data = current1.data
+            while current2:
+                temp = current2
+                current2 = current2.next
+                if temp.data == data:
+                   llist.remove(temp)
+            current1 = current1.next
+
+
+    def find_merge(llist1, llist2):
+        if (llist1.head == None and llist2.head == None):
+            print "Lists empty"
+
+        merge = linkedlist()
+        current1 = llist1.head
+        while current1:
+            current2 = llist2.head
+            data = current1.data
+            while current2:
+                if current2.data == data:
+                    node = Node(data)
+                    merge.insert_end(node)
+                    break
+                current2 = current2.next
+            current1 = current1.next
+        remove_duplicates(merge)
+
+        return(merge)
+
+
+
+llist1 = linkedlist()
+llist1.insert_end(10)
+llist1.display()
+
+print "Llist1 is: ", llist1
+
+#llist2 = linkedlist()
+#llist2.insert_end(40)
+#llist2.insert_end(50)
+#llist2.insert_end(60)
+#llist2.insert_end(70)
+#print "Llist2 is: ", llist2
+
+#print "Intersection of two lists is: ", find_merge(llist1, llist2)
+

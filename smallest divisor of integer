@@ -1,0 +1,24 @@
+#!/usr/bin/python
+def divisor(n) :
+    if n < 1 : print " Not valid"
+    if n == 1 : print "divisible by 1 "
+    if n == 2 : print "divisible by 2 "
+    if n == 3 : print "divisible by 3 "
+    i = 2
+    a = 0
+    while (i < n + 1) :
+        if ( n % i == 0 ) :
+            a = n / i
+            return i
+        i = i + 1
+
+
+print "smallest divisor for 32 is: ", divisor(32)
+print "smallest divisor for 0 is: ", divisor(0)
+print "smallest divisor for 1 is: ", divisor(1)
+print "smallest divisor for 3 is: ", divisor(3)
+print "smallest divisor for 83 is: ", divisor(83)
+print "smallest divisor for 33 is: ", divisor(33)
+print "smallest divisor for 323 is: ", divisor(323)
+print "smallest divisor for 9973 is: ", divisor(9973)
+print "smallest divisor for 99991 is: ", divisor(99991)
